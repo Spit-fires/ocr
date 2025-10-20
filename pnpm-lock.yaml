@@ -7,10 +7,6 @@ settings:
 importers:
 
   .:
-    dependencies:
-      '@gpt4free/g4f.dev':
-        specifier: ^1.0.6
-        version: 1.0.6
     devDependencies:
       '@internationalized/date':
         specifier: ^3.10.0
@@ -36,9 +32,6 @@ importers:
       clsx:
         specifier: ^2.1.1
         version: 2.1.1
-      openai:
-        specifier: ^6.5.0
-        version: 6.5.0
       svelte:
         specifier: ^5.39.5
         version: 5.41.0
@@ -230,9 +223,6 @@ packages:
 
   '@floating-ui/utils@0.2.10':
     resolution: {integrity: sha512-aGTxbpbg8/b5JfU1HXSrbH3wXZuLPJcNEcZQFMxLs3oSzgtVu6nFPkbbGGUvBcUjKV2YyB9Wxxabo+HEH9tcRQ==}
-
-  '@gpt4free/g4f.dev@1.0.6':
-    resolution: {integrity: sha512-NEEsnAm/cIy2TVsXNQJiP7KV4V3EeDOC/Bzc2z6enjBClBVR/PpfOlbKnCV0x8xHNUNKsqjpzFc7iloYtl01Jw==}
 
   '@iarna/toml@2.2.5':
     resolution: {integrity: sha512-trnsAYxU3xnS1gPHPyU961coFyLkh4gAD/0zQ5mymY4yOZ+CYvsPqUbOFSw0aDM4y0tV7tiFxL/1XfXPNC6IPg==}
@@ -722,18 +712,6 @@ packages:
     engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
     hasBin: true
 
-  openai@6.5.0:
-    resolution: {integrity: sha512-bNqJ15Ijbs41KuJ2iYz/mGAruFHzQQt7zXo4EvjNLoB64aJdgn1jlMeDTsXjEg+idVYafg57QB/5Rd16oqvZ6A==}
-    hasBin: true
-    peerDependencies:
-      ws: ^8.18.0
-      zod: ^3.25 || ^4.0
-    peerDependenciesMeta:
-      ws:
-        optional: true
-      zod:
-        optional: true
-
   picocolors@1.1.1:
     resolution: {integrity: sha512-xceH2snhtb5M9liqDsmEw56le376mTZkEX/jEb/RxNFyegNul7eNslCXP9FDj/Lcu0X8KEyMceP2ntpaHrDEVA==}
 
@@ -990,8 +968,6 @@ snapshots:
       '@floating-ui/utils': 0.2.10
 
   '@floating-ui/utils@0.2.10': {}
-
-  '@gpt4free/g4f.dev@1.0.6': {}
 
   '@iarna/toml@2.2.5': {}
 
@@ -1392,8 +1368,6 @@ snapshots:
   ms@2.1.3: {}
 
   nanoid@3.3.11: {}
-
-  openai@6.5.0: {}
 
   picocolors@1.1.1: {}
 
