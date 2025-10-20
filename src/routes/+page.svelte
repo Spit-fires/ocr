@@ -155,11 +155,14 @@
 			const dataUrl = imagePreviewUrl ?? (await readFileAsDataUrl(selectedFile));
 			const base64 = dataUrl.split(',')[1] || dataUrl;
 
+			// get the file type [png or jpeg or jpg or webp]
+			const fileType = selectedFile.type;
+
 			// Stream response from server
 			const response = await fetch('/api/ocr', {
 				method: 'POST',
 				headers: { 'Content-Type': 'application/json' },
-				body: JSON.stringify({ base64, prompt: 'What is in this image?', stream: true })
+				body: JSON.stringify({ base64: base64, filetype: fileType })
 			});
 
 			if (!response.ok || !response.body) {
@@ -365,10 +368,10 @@
 	});
 </script>
 
-<div class="min-h-screen bg-background text-foreground p-4 sm:p-6 lg:p-8" on:paste={handlePaste}>
+<div class="min-h-screen bg-background text-foreground p-4 sm:p-6 lg:p-8" onpaste={handlePaste}>
 	<div class="max-w-6xl mx-auto">
 		<header class="text-center mb-10">
-			<h1 class="text-4xl font-bold tracking-tight">AI OCR</h1>
+			<h1 class="text-4xl font-bold tracking-tight">Free OCR</h1>
 			<p class="text-muted-foreground mt-2">Extract text from images with ease.</p>
 		</header>
 
@@ -388,10 +391,10 @@
 							isDragActive ? 'border-primary bg-primary/10' : 'border-muted bg-transparent'
 						}`}
 						role="presentation"
-						on:dragenter={handleDragEnter}
-						on:dragover={handleDragOver}
-						on:dragleave={handleDragLeave}
-						on:drop={handleDrop}
+						ondragenter={handleDragEnter}
+						ondragover={handleDragOver}
+						ondragleave={handleDragLeave}
+						ondrop={handleDrop}
 					>
 						{#if imagePreviewUrl}
 							<div

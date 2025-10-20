@@ -2,11 +2,19 @@ import type { RequestHandler } from '@sveltejs/kit';
 import { API_KEY } from '$env/static/private';
 
 export const POST: RequestHandler = async ({ request }) => {
-	const { base64 } = await request.json();
+	const { base64, filetype } = await request.json();
     const stream = true;
 
 	if (!base64 || typeof base64 !== 'string') {
 		return new Response(JSON.stringify({ error: 'Missing or invalid base64 string.' }), {
+			status: 400,
+			headers: { 'Content-Type': 'application/json' }
+		});
+	}
+
+	// only allow certain file types
+	if (!filetype || !['image/png', 'image/jpeg', 'image/jpg', 'image/webp'].includes(filetype)) {
+		return new Response(JSON.stringify({ error: 'Unsupported file type.' }), {
 			status: 400,
 			headers: { 'Content-Type': 'application/json' }
 		});
@@ -23,7 +31,7 @@ export const POST: RequestHandler = async ({ request }) => {
 			role: 'user',
 			content: [
 				{ type: 'text', text: "OCR This." },
-				{ type: 'image_url', image_url: { url: `data:image/jpeg;base64,${base64}` } }
+				{ type: 'image_url', image_url: { url: `data:${filetype};base64,${base64}` } }
 			]
 		}
 	];
