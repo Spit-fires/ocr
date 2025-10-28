@@ -26,6 +26,7 @@
 	<link rel="icon" href={favicon} />
 	<link rel="manifest" href="/manifest.webmanifest" />
 	<meta name="theme-color" content={themeColor} />
+	<script defer src="https://umami-spitfire.netlify.app/script.js" data-website-id="597e22b1-0d6c-4930-9c34-982a9dd207c1"></script>
 </svelte:head>
 
 {@render children?.()}
