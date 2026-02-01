@@ -491,7 +491,7 @@
 		</main>
 
 		<!-- Native Banner Ad -->
-		<div class="mt-8 flex justify-center">
+		<div class="mt-8 flex justify-center" role="region" aria-label="Advertisement">
 			<div id="container-f43f518d0f162ac68fd53a2b8bc46f6c"></div>
 		</div>
 
