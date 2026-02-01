@@ -490,6 +490,11 @@
 			</Card.Root>
 		</main>
 
+		<!-- Native Banner Ad -->
+		<div class="mt-8 flex justify-center">
+			<div id="container-f43f518d0f162ac68fd53a2b8bc46f6c"></div>
+		</div>
+
 		<footer class="mt-12 text-center text-xs text-muted-foreground">
 			MADE BY FAHAD HOSSAIN <span aria-hidden="true">&bull;</span> <a href="https://pollinations.ai/">POWERED BY POLLINATIONS AI</a>
 		</footer>
