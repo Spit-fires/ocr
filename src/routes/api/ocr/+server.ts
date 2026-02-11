@@ -43,7 +43,7 @@ export const POST: RequestHandler = async ({ request }) => {
 			'Authorization': `Bearer ${API_KEY}`
 		},
 		body: JSON.stringify({
-			model: 'gemini-search',
+			model: 'kimi',
 			messages,
 			stream
 		})
